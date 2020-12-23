@@ -1,132 +1,711 @@
-.headerBar {
-    background: rgba(0, 0, 0, 0.18);
-    box-shadow: inset 60px 0 120px #ff00ff1c, inset -60px 0 120px #00ffff1f;
+/*
 
+This file was generated using krunker-css v1.0 (https://css.szv.moe/), a project by szv (szv#0001), cxii (cxii#0001), maple (maple#9999) and other contributors.
+Join the Discord server (https://discord.gg/xnFxRgJ).
+
+The following sequence of characters is used when importing this file using krunker-css. Do not remove it, otherwise this file will be unreadable.
+
+eLpAmIiXcVzSeyJwYWxldHRlLTAiOiJyZ2IoMTI4LCAyNTUsIDIyOSkiLCJtZW51LWJhY2tncm91bmQtY29sb3IiOiJyZ2JhKDAsIDAsIDAsIDAuMjIpIiwibWVudS1ob3Zlci1iYWNrZ3JvdW5kLWNvbG9yIjoicmdiKDI0OCwgMTk3LCA5MikiLCJob21lLW1lbnUtdGV4dC1jb2xvciI6InJnYigyNTUsIDI1NSwgMjU1KSIsInRvcGJhci1iYWNrZ3JvdW5kLWNvbG9yIjoicmdiYSgwLCAwLCAwLCAwLjUpIiwidG9wYmFyLXRleHQtY29sb3IiOiJyZ2IoMjU1LCAyNTUsIDI1NSkiLCJ0b3BiYXItbGlnaHQtdGV4dC1jb2xvciI6InJnYmEoMjU1LCAyNTUsIDI1NSwgMC42KSIsInRvcGJhci1sZXZlbC1iYWNrZ3JvdW5kLWNvbG9yIjoicmdiYSgwLCAwLCAwLCAwLjgpIiwidG9wLWJhci1yb3VuZG5lc3MiOiI4IiwibWVudS1mcHMtY29sb3IiOiJyZ2IoMTU4LCAyMzUsIDg2KSIsIm1lbnUtcGluZy1jb2xvciI6InJnYigxNTgsIDIzNSwgODYpIiwidG9wYmFyLWNvdW50ZXJzLXRleHQtY29sb3IiOiJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNzUpIiwiaG9tZS1wcm9ncmVzcy1iYXIiOiJyZ2IoMzMsIDE1MCwgMjQzKSIsImhvbWUtcHJvZ3Jlc3MtYmFyLWJhY2tncm91bmQiOiJyZ2JhKDAsIDAsIDAsIDAuNzUpIiwibWFwaW5mby1jb2xvciI6InJnYigyNTUsIDI1NSwgMjU1KSIsIm1hcGluZm8tZGlzcGxheSI6ImZhbHNlIiwidGVybXMtY29sb3IiOiJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNikiLCJhZHZlcnRpc2UtY29sb3IiOiJyZ2IoMjU1LCAyNTUsIDI1NSkiLCJzaG93LWxlZ2FsLWxpbmtzIjoiZmFsc2UiLCJtZW51LXBsYXllci1uYW1lLWNvbG9yIjoicmdiKDI1NSwgMjU1LCAyNTUpIiwiaG9tZS1wcmVtaXVtLWNvbG9yIjoicmdiKDI1MSwgMTkyLCA0NSkiLCJob21lLXZlcmlmaWVkLWNvbG9yIjoicmdiKDY0LCAxOTYsIDI1NSkiLCJpbnN0cnVjdGlvbnMtY29sb3IiOiJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuOCkiLCJzaG93LWxvZ28iOiJ0cnVlIiwibG9nby1zaXplIjoiMTA0LjMxMDM0NDgyNzU4NjM4Iiwic2hvdy1tZW51LXByb2ZpbGUtcGljIjoidHJ1ZSIsInNob3ctbGV2ZWwtaWNvbiI6InRydWUiLCJzaG93LWJ1eS1rci1idXR0b24iOiJmYWxzZSIsInNob3ctc29jaWFsLWJ1dHRvbnMiOiJmYWxzZSIsInNob3ctYWN0aXZlLXN0cmVhbXMiOiJmYWxzZSIsInNob3ctZnJlZS1rci1idXR0b24iOiJmYWxzZSIsInNob3ctbWVyY2gtYnV0dG9uIjoiZmFsc2UiLCJtZW51LWJhY2tncm91bmQiOiJyZ2IoMjU1LCAyNTUsIDI1NSkiLCJtZW51LXNoYWRvdyI6InJnYigxNjYsIDE2NiwgMTY2KSIsIm1lbnUtcm91bmRuZXNzIjoiNiIsIm1lbnUtdGV4dC1jb2xvciI6InJnYig1MywgNTMsIDUzKSIsIm1lbnUtbGlnaHQtdGV4dC1jb2xvciI6InJnYmEoMCwgMCwgMCwgMC41KSIsInNsaWRlci1iYWNrZ3JvdW5kIjoicmdiKDE2OCwgMTY4LCAxNjgpIiwic2xpZGVyLXRodW1iLWNvbG9yIjoicmdiKDMzLCAxNTAsIDI0MykiLCJzd2l0Y2gtdGh1bWIiOiJyZ2IoMjU1LCAyNTUsIDI1NSkiLCJpbnB1dC10ZXh0IjoicmdiKDI1NSwgMjU1LCAyNTUpIiwiaW5wdXQtZmllbGQiOiJyZ2IoMjM4LCAyMzgsIDIzOCkiLCJpbnB1dC1maWVsZC1wbGFjZWhvbGRlciI6InJnYigyMzgsIDIzOCwgMjM4KSIsImlucHV0LWZpZWxkLXRleHQiOiJyZ2IoNTMsIDUzLCA1MykiLCJzY3JvbGxiYXIiOiJyZ2IoMTM0LCAxMzQsIDEzNCkiLCJzY3JvbGxiYXItdHJhY2siOiJyZ2IoMjQwLCAyNDAsIDI0MCkiLCJsaW5rIjoicmdiKDMzLCAxNTAsIDI0MykiLCJyYW5rZWQtcmVhZHkiOiJyZ2IoMzMsIDE1MCwgMjQzKSIsInJhbmtlZC1yZWFkeS1zaGFkb3ciOiJyZ2IoMjcsIDExOCwgMTkxKSIsInJhbmtlZC11bnJlYWR5IjoicmdiKDI1NSwgNzEsIDcxKSIsInJhbmtlZC11bnJlYWR5LXNoYWRvdyI6InJnYigxNTMsIDQzLCA0MykiLCJyYW5rZWQtcmVhZHktYm9yZGVyLWNvbG9yIjoicmdiKDUwLCAyMDUsIDUwKSIsInJhbmtlZC11bnJlYWR5LWJvcmRlci1jb2xvciI6InJnYmEoMCwgMCwgMCwgMC4yKSIsInJhbmtlZC10ZXh0IjoicmdiKDI1NSwgMjU1LCAyNTUpIiwicHJlc2V0cy1kaXNwbGF5IjoidHJ1ZSIsImlucHV0IjoicmdiKDMzLCAxNTAsIDI0MykiLCJwcm9maWxlLXRhYnMtYmFja2dyb3VuZC1jb2xvciI6InJnYmEoMCwgMCwgMCwgMC4xMikiLCJwcm9maWxlLXRhYnMtc2VsZWN0ZWQtaGlnaGxpZ2h0LWNvbG9yIjoicmdiYSgwLCAwLCAwLCAwLjcpIiwicHJvZmlsZS10YWJzLXNlbGVjdGVkLWhvdmVyLWNvbG9yIjoicmdiYSgwLCAwLCAwLCAwLjIpIiwicHJvZ3Jlc3MtYmFyLWZpbGxlZCI6InJnYigzMywgMTUwLCAyNDMpIiwicHJvZ3Jlc3MtYmFyLXVuZmlsbGVkIjoicmdiKDM2LCAzNiwgMzYpIiwicHJvZ3Jlc3MtYmFyLXRleHQiOiJyZ2IoMjU1LCAyNTUsIDI1NSkiLCJ0aW1lci1pY29uLWRpc3BsYXkiOiJ0cnVlIiwiaGVhbHRoLWljb24tZGlzcGxheSI6InRydWUiLCJhbW1vLWljb24tZGlzcGxheSI6InRydWUiLCJodWQtYmFja2dyb3VuZC1jb2xvciI6InJnYmEoMCwgMCwgMCwgMC4yKSIsImh1ZC10ZXh0LWNvbG9yIjoicmdiYSgyNTUsIDI1NSwgMjU1LCAwLjcpIiwiaHVkLWJvbGQtdGV4dC1jb2xvciI6InJnYigyNTUsIDI1NSwgMjU1KSIsImh1ZC1yb3VuZG5lc3MiOiIxMCIsImxlYWRlcmJvYXJkLW1lLWNvbG9yIjoicmdiKDI1NSwgMjU1LCAyNTUpIiwibGVhZGVyYm9hcmQtdGVhbS1jb2xvciI6InJnYmEoMjU1LCAyNTUsIDI1NSwgMC42KSIsImxlYWRlcmJvYXJkLWVuZW15LWNvbG9yIjoicmdiKDIzNSwgODYsIDg2KSIsImxlYWRlcmJvYXJkLWNsYW4tY29sb3IiOiJyZ2IoMjU1LCAyNTUsIDI1NSkiLCJsZWFkZXJib2FyZC12ZXJpZmllZC1jbGFuLWNvbG9yIjoicmdiKDI1MSwgMTkyLCA0NSkiLCJwcmVtaXVtLWNvbG9yIjoicmdiKDI1MSwgMTkyLCA0NSkiLCJ2ZXJpZmllZC1jb2xvciI6InJnYig2NCwgMTk2LCAyNTUpIiwiZW5lbXktc2NvcmUtY29sb3IiOiJyZ2IoMjM1LCA4NiwgODYpIiwidGVhbS1zY29yZS1jb2xvciI6InJnYigyNTUsIDI1NSwgMjU1KSIsImZwcy1jb2xvciI6InJnYigxNTgsIDIzNSwgODYpIiwicGluZy1jb2xvciI6InJnYigxNTgsIDIzNSwgODYpIiwidm90ZWtpY2sta2V5cy1jb2xvciI6InJnYigyNTEsIDE5MiwgNDUpIiwiaGVhbHRoLWJhci1yb3VuZG5lc3MiOiI1IiwibWFpbi1idXR0b24tY29sb3IiOiJyZ2JhKDI1NSwgMjU1LCAyNTUsIDApIiwibWFpbi1idXR0b24tc2hhZG93LWNvbG9yIjoicmdiKDAsIDIwOCwgMjU1KSIsIm1haW4tYnV0dG9uLWhvdmVyLWNvbG9yIjoicmdiKDI1NSwgMjU1LCAyNTUpIiwibWFpbi1idXR0b24taG92ZXItc2hhZG93LWNvbG9yIjoicmdiKDE3OSwgMTc5LCAxNzkpIiwibWFpbi1idXR0b24tdGV4dC1jb2xvciI6InJnYigyNTUsIDI1NSwgMjU1KSIsIm1haW4tYnV0dG9uLWNvcm5lci1yb3VuZG5lc3MiOiI0Iiwic2Vjb25kYXJ5LWJ1dHRvbiI6InJnYigzMywgMTUwLCAyNDMpIiwic2Vjb25kYXJ5LWJ1dHRvbi1ob3ZlciI6InJnYigyNiwgMTIwLCAxOTQpIiwic2Vjb25kYXJ5LWJ1dHRvbi10ZXh0IjoicmdiKDI1NSwgMjU1LCAyNTUpIiwic2Vjb25kYXJ5LWJ1dHRvbi1yb3VuZG5lc3MiOiI2IiwiY2hhdC1iYWNrZ3JvdW5kLWNvbG9yIjoicmdiYSgwLCAwLCAwLCAwLjIpIiwiY2hhdC1pbnB1dC1iYWNrZ3JvdW5kLWNvbG9yIjoicmdiYSgwLCAwLCAwLCAwLjQpIiwiY2hhdC10ZXh0LWNvbG9yIjoicmdiYSgyNTUsIDI1NSwgMjU1LCAwLjcpIiwiY2hhdC1ib2xkLXRleHQtY29sb3IiOiJyZ2IoMjU1LCAyNTUsIDI1NSkiLCJjaGF0LXlvdS1jb2xvciI6InJnYigyNTUsIDI1NSwgMjU1KSIsImNoYXQtdGVhbS1jb2xvciI6InJnYigxNTgsIDIzNSwgODYpIiwiY2hhdC1lbmVteS1jb2xvciI6InJnYigyMzUsIDg2LCA4NikiLCJjaGF0LWxlYXZlLXRleHQtY29sb3IiOiJyZ2IoMCwgMTkyLCAyNTUpIiwiY2hhdC1taWMtZGlzcGxheSI6ImZhbHNlIiwiY2hhdC1yb3VuZG5lc3MiOiIwIiwiY2hhdC1pbnB1dC1yb3VuZG5lc3MiOiIwIiwiY2hhdC1hbmltYXRlIjoidHJ1ZSIsImNsYXNzLW5hbWUtY29sb3IiOiJyZ2IoMjU1LCAyNTUsIDI1NSkiLCJjbGFzcy13ZWFwb24tY29sb3IiOiJyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuNykiLCJjbGFzcy1ocC12YWx1ZS1jb2xvciI6InJnYigyNTUsIDI1NSwgMjU1KSIsImNsYXNzLWhwLXVuaXQtY29sb3IiOiJyZ2IoMTM0LCAxMzIsIDEzMikiLCJjbGFzcy1sZXZlbC1jb2xvciI6InJnYigyNTUsIDI1NSwgMjU1KSIsImNsYXNzLXByb2dyZXNzLWJhci1jb2xvciI6InJnYigzMywgMTUwLCAyNDMpIiwiY2xhc3MtcHJvZ3Jlc3MtYmFyLWJhY2tncm91bmQtY29sb3IiOiJyZ2IoMzYsIDM2LCAzNikiLCJnYW1lZm9udCI6IiIsImhlYWRlcmZvbnQiOiIifQ==eLpAmIiXcVzS
+
+*/
+
+:root {
+	--menu-background-color: rgba(0, 0, 0, 0.22);
+	--menu-hover-background-color: rgb(248, 197, 92);
+	--home-menu-text-color: rgb(255, 255, 255);
+	--topbar-background-color: rgba(0, 0, 0, 0.5);
+	--topbar-text-color: rgb(255, 255, 255);
+	--topbar-light-text-color: rgba(255, 255, 255, 0.6);
+	--topbar-level-background-color: rgba(0, 0, 0, 0.8);
+	--top-bar-roundness: 8px;
+	--menu-fps-color: rgb(158, 235, 86);
+	--menu-ping-color: rgb(158, 235, 86);
+	--topbar-counters-text-color: rgba(255, 255, 255, 0.75);
+	--home-progress-bar: rgb(33, 150, 243);
+	--home-progress-bar-background: rgba(0, 0, 0, 0.75);
+	--mapinfo-color: rgb(255, 255, 255);
+	--mapinfo-display: none;
+	--terms-color: rgba(255, 255, 255, 0.6);
+	--advertise-color: rgb(255, 255, 255);
+	--legal-links-display: none;
+	--menu-player-name-color: rgb(255, 255, 255);
+	--home-premium-color: rgb(251, 192, 45);
+	--home-verified-color: rgb(64, 196, 255);
+	--instructions-color: rgba(255, 255, 255, 0.8);
+	--show-logo: flex;
+	--logo-size: 104.31034482758638px;
+	--show-menu-profile-pic: block;
+	--level-icon-display: block;
+	--buy-kr-button-display: none;
+	--social-buttons-display: none;
+	--active-streams-display: none;
+	--free-kr-display: none;
+	--merch-button-display: none;
+	--menu-background: rgb(255, 255, 255);
+	--menu-shadow: rgb(166, 166, 166);
+	--menu-roundness: 6px;
+	--menu-text-color: rgb(53, 53, 53);
+	--menu-light-text-color: rgba(0, 0, 0, 0.5);
+	--slider-background: rgb(168, 168, 168);
+	--slider-thumb-color: rgb(33, 150, 243);
+	--switch-thumb: rgb(255, 255, 255);
+	--input-text: rgb(255, 255, 255);
+	--input-field: rgb(238, 238, 238);
+	--input-field-placeholder: rgb(238, 238, 238);
+	--input-field-text: rgb(53, 53, 53);
+	--scrollbar: rgb(134, 134, 134);
+	--scrollbar-track: rgb(240, 240, 240);
+	--link: rgb(33, 150, 243);
+	--ranked-ready: rgb(33, 150, 243);
+	--ranked-ready-shadow: rgb(27, 118, 191);
+	--ranked-unready: rgb(255, 71, 71);
+	--ranked-unready-shadow: rgb(153, 43, 43);
+	--ranked-ready-border-color: rgb(50, 205, 50);
+	--ranked-unready-border-color: rgba(0, 0, 0, 0.2);
+	--ranked-text: rgb(255, 255, 255);
+	--presets-display: inline-block;
+	--input: rgb(33, 150, 243);
+	--profile-tabs-background-color: rgba(0, 0, 0, 0.12);
+	--profile-tabs-selected-highlight-color: rgba(0, 0, 0, 0.7);
+	--profile-tabs-selected-hover-color: rgba(0, 0, 0, 0.2);
+	--progress-bar-filled: rgb(33, 150, 243);
+	--progress-bar-unfilled: rgb(36, 36, 36);
+	--progress-bar-text: rgb(255, 255, 255);
+	--timer-icon-display: inline-block;
+	--health-icon-display: inline-block;
+	--ammo-icon-display: inline-block;
+	--hud-background-color: rgba(0, 0, 0, 0.2);
+	--hud-text-color: rgba(255, 255, 255, 0.7);
+	--hud-bold-text-color: rgb(255, 255, 255);
+	--hud-roundness: 10px;
+	--leaderboard-me-color: rgb(255, 255, 255);
+	--leaderboard-team-color: rgba(255, 255, 255, 0.6);
+	--leaderboard-enemy-color: rgb(235, 86, 86);
+	--leaderboard-clan-color: rgb(255, 255, 255);
+	--leaderboard-verified-clan-color: rgb(251, 192, 45);
+	--premium-color: rgb(251, 192, 45);
+	--verified-color: rgb(64, 196, 255);
+	--enemy-score-color: rgb(235, 86, 86);
+	--team-score-color: rgb(255, 255, 255);
+	--fps-color: rgb(158, 235, 86);
+	--ping-color: rgb(158, 235, 86);
+	--votekick-keys-color: rgb(251, 192, 45);
+	--health-bar-roundness: 5px;
+	--main-button-color: rgba(255, 255, 255, 0);
+	--main-button-shadow-color: rgb(0, 208, 255);
+	--main-button-hover-color: rgb(255, 255, 255);
+	--main-button-hover-shadow-color: rgb(179, 179, 179);
+	--main-button-text-color: rgb(255, 255, 255);
+	--main-button-corner-roundness: 4px;
+	--secondary-button: rgb(33, 150, 243);
+	--secondary-button-hover: rgb(26, 120, 194);
+	--secondary-button-text: rgb(255, 255, 255);
+	--secondary-button-roundness: 6px;
+	--chat-background-color: rgba(0, 0, 0, 0.2);
+	--chat-input-background-color: rgba(0, 0, 0, 0.4);
+	--chat-text-color: rgba(255, 255, 255, 0.7);
+	--chat-bold-text-color: rgb(255, 255, 255);
+	--chat-you-color: rgb(255, 255, 255);
+	--chat-team-color: rgb(158, 235, 86);
+	--chat-enemy-color: rgb(235, 86, 86);
+	--chat-leave-text-color: rgb(0, 192, 255);
+	--chat-mic-display: none;
+	--chat-roundness: 0px;
+	--chat-input-roundness: 0px;
+	--chat-animate: 0.2s ease-in-out;
+	--class-name-color: rgb(255, 255, 255);
+	--class-weapon-color: rgba(255, 255, 255, 0.7);
+	--class-hp-value-color: rgb(255, 255, 255);
+	--class-hp-unit-color: rgb(134, 132, 132);
+	--class-level-color: rgb(255, 255, 255);
+	--class-progress-bar-color: rgb(33, 150, 243);
+	--class-progress-bar-background-color: rgb(36, 36, 36);
 }
 
-#mainLogo {
-    height: 100px;
-
+* {
+    color: var(--menu-text-color);
 }
 
-.menuItem {
-    background: rgba(0, 0, 0, 0.18);
-    box-shadow: inset 60px 0 120px #ff00ff1c, inset -60px 0 120px #00ffff1f;
-
+.progressBarInner {
+	background: var(--home-progress-bar) !important;
 }
 
-#aContainer {
-    position: fixed;
-    transform: scale(0.6);
-    bottom: 0%;
-    right: 22%;
-    z-index:9999999999;
-}
-#aMerger {
-    pointer-events:none;
-    margin-left: 73%;
-    margin-bottom: -5.2%;
-    background-image: url("https://www.philzgoodman.com/s/philzwebsitepromo.png");
-    background-size:25%;
-    background-repeat: no-repeat;
+.imageButton {
+	display: var(--social-buttons-display) !important;
 }
 
-.headerBarRight {
-    opacity: 0.5;
+.headerBarRight .verticalSeparator {
+	display: var(--social-buttons-display) !important;
 }
 
-#merchImg {
-    display: none;
+#streamContainer {
+	display: var(--active-streams-display) !important;
 }
 
-#gameUI {
-    opacity: 0.5;
-
+#claimHolder {
+	display: var(--free-kr-display) !important;
 }
 
-#leaderDisplay {
-    background-color: rgba(13, 13, 13, 0.85);
+#merchHolder {
+	display: var(--merch-button-display) !important;
 }
 
-
-
-.twitch {
-    display: none;
-    
-}
-
-.youtube {
-    display: none;
-}
-
-.esports {
-    display: none;
-}
-
-#menuWindow {
-    
-    position: fixed;
-    left: 22%;
-    top: 6%;
-    z-index: 999999;
-    height: fit-content;
-    max-height: 800px;
-    opacity: 0.9;
-
-}
-
-
-
-#settName {
-
-
-    z-index:9999999;
-}
-
-#menuClassName {
-    filter: drop-shadow(4px 4px 10px #6dffd28f);
-}
-
-#menuClassContainer {
-    opacity: 0.9;
-    position: fixed;
-    left: -62%;
-    bottom: -2%;
-    transform: scale(1.1);
-    z-index: 999999;
-}
-
-#customizeButton {
-    z-index: 999999;
-}
-
-#subLogoButtons {
-    bottom: 1.6%;
-    left: 36%;
-    opacity: 0.9;
-}
-
-#customizeButton {
-    width: 5%;
-    background-color: black;
-    padding-top: 12px;
+#mapInfo + div {
+	display: var(--legal-links-display) !important;
 }
 
 .button {
-    box-shadow: inset 0 -7px 0 0 #ffffff;
-    background-color: #6dffd28f;
-    opacity: 0.8;
+	background-color: var(--main-button-color) !important;
+	box-shadow: inset 0 -7px 0 0 var(--main-button-shadow-color) !important;
+	color: var(--main-button-text-color) !important;
+	border-radius: var(--main-button-corner-roundness) !important;
 }
 
+.button:hover {
+	background-color: var(--main-button-hover-color) !important;
+	box-shadow: inset 0 -7px 0 0 var(--main-button-hover-shadow-color) !important;
+}
 
-.buttonR {
-    opacity: 0.8;
-    grayscale(10%); }
+.accountButton {
+	background-color: var(--secondary-button) !important;
+	color: var(--secondary-button-text) !important;
+	border-radius: var(--secondary-button-roundness) !important;
+}
 
-.buttonP {
-    opacity: 0.8;
-    grayscale(10%); }
+.accountButton:hover {
+	background-color: var(--secondary-button-hover) !important;
+}
 
-.buttonG {
-    opacity: 0.8;
-    grayscale(10%); }
+.mapLoadButton {
+	background-color: var(--secondary-button) !important;
+	color: var(--secondary-button-text) !important;
+	border-radius: var(--secondary-button-roundness) !important;
+}
+
+.mapLoadButton:hover {
+	background-color: var(--secondary-button-hover) !important;
+}
+
+.updDisN {
+	background-color: var(--secondary-button) !important;
+	color: var(--secondary-button-text) !important;
+	border-radius: var(--secondary-button-roundness) !important;
+}
+
+.updDisN:hover {
+	background-color: var(--secondary-button-hover) !important;
+	transform: none;
+}
+
+.subPassChg {
+	background-color: var(--secondary-button) !important;
+	color: var(--secondary-button-text) !important;
+	border-radius: var(--secondary-button-roundness) !important;
+}
+
+.subPassChg:hover {
+	background-color: var(--secondary-button-hover) !important;
+	transform: none;
+}
+
+.creatorCodeBtn {
+	background-color: var(--secondary-button) !important;
+	color: var(--secondary-button-text);
+	border-radius: var(--secondary-button-roundness) !important;
+}
+
+.creatorCodeBtn:hover {
+	background-color: var(--secondary-button-hover) !important;
+	filter: none !important;
+}
+
+.redVouchBtn {
+	background-color: var(--secondary-button) !important;
+	color: var(--secondary-button-text) !important;
+	border-radius: var(--secondary-button-roundness) !important;
+}
+
+.creatorCodeBtn:hover {
+	background-color: var(--secondary-button-hover) !important;
+}
+
+.hostToggle {
+	background-color: var(--secondary-button) !important;
+	color: var(--secondary-button-text) !important;
+	border-radius: var(--secondary-button-roundness) !important;
+}
+
+.hostToggle:hover {
+	background-color: var(--secondary-button-hover) !important;
+}
+
+.hostPresetBtn {
+	background-color: var(--secondary-button) !important;
+	color: var(--secondary-button-text) !important;
+	border-radius: var(--secondary-button-roundness) !important;
+}
+
+.hostPresetBtn:hover {
+	color: var(--secondary-button-text) !important;
+	background-color: var(--secondary-button-hover) !important;
+}
+
+.quickJoin {
+	background-color: var(--secondary-button) !important;
+	color: var(--secondary-button-text) !important;
+	border-radius: var(--secondary-button-roundness) !important;
+}
+
+.quickJoin:hover {
+	background-color: var(--secondary-button-hover) !important;
+}
+
+.searchBtn {
+	background-color: var(--secondary-button) !important;
+	color: var(--secondary-button-text) !important;
+	border-radius: var(--secondary-button-roundness) !important;
+}
+
+.searchBtn:hover {
+	background-color: var(--secondary-button-hover) !important;
+	transform: none !important;
+	filter: none !important;
+}
+
+.joinQueue {
+	color: var(--ranked-text) !important;
+	background-color: var(--ranked-ready) !important;
+	box-shadow: inset 0 -10px 0 0 var(--ranked-ready-shadow) !important;
+}
+
+.joinQueue:hover {
+	box-shadow: inset 0 -7px 0 0 var(--ranked-ready-shadow) !important;
+}
+
+.jQR {
+	background-color: var(--ranked-unready) !important;
+	box-shadow: inset 0 -10px 0 0 var(--ranked-unready-shadow) !important;
+}
+
+.jQR:hover {
+	box-shadow: inset 0 -7px 0 0 var(--ranked-unready-shadow) !important;
+}
+
+.krSocial {
+	display: var(--buy-kr-button-display) !important;
+}
+
+#menuLevelIcon {
+	display: var(--level-icon-display) !important;
+}
+
+.sliderVal {
+	color: var(--input-text) !important;
+	background: var(--input) !important;
+}
+
+.sliderM {
+	background-color: var(--slider-background) !important;
+}
+
+.sliderM::-webkit-slider-thumb {
+	background-color: var(--input) !important;
+}
+
+input:checked+.slider {
+	background-color: var(--input) !important;
+}
+
+.slider:before {
+	background-color: var(--switch-thumb) !important;
+}
+
+input:checked+.optCheck {
+	background-color: var(--input) !important;
+}
+
+.xpBar {
+	background-color: var(--progress-bar-unfilled) !important;
+}
+
+.xpBarB {
+	background-color: var(--progress-bar-filled) !important;
+}
+
+.xpBarV {
+	color: var(--progress-bar-text) !important;
+}
+
+.inputGrey2 {
+	background: var(--input-field) !important;
+	color: var(--input-field-text) !important;
+}
+
+.inputGrey2::placeholder {
+	color: var(--input-field-placeholder) !important;
+}
+
+.formInput {
+	background: var(--input-field) !important;
+}
+
+.formInput::placeholder {
+	color: var(--input-field-placeholder) !important;
+}
+
+#passCode {
+	background: var(--input-field) !important;
+}
+
+#passCode::placeholder {
+	color: var(--input-field-placeholder) !important;
+}
+
+#presetSelect {
+	background: var(--input-field) !important;
+}
+
+#presetSelect::placeholder {
+	color: var(--input-field-placeholder) !important;
+}
+
+#customSnameTeam1 {
+	background: var(--input-field) !important;
+}
+
+#customSnameTeam1::placeholder {
+	color: var(--input-field-placeholder) !important;
+}
+
+#customSnameTeam2 {
+	background: var(--input-field) !important;
+}
+
+#customSnameTeam2::placeholder {
+	color: var(--input-field-placeholder) !important;
+}
+
+.sliderM::-webkit-slider-thumb {
+	background-color: var(--slider-thumb-color) !important;
+}
+
+::-webkit-scrollbar-track {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-radius: 0;
+	background-color: var(--scrollbar-track) !important;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--scrollbar) !important;
+}
+
+#menuWindow {
+	background-color: var(--menu-background) !important;
+	box-shadow: 0 9px 0 0 var(--menu-shadow) !important;
+	border-radius: var(--menu-roundness) !important;
+}
+
+.serverHeader {
+	background-color: var(--menu-background) !important;
+	border-radius: var(--menu-roundness) !important;
+}
+
+.settingsHeader {
+	background-color: var(--menu-background) !important;
+	border-radius: var(--menu-roundness) !important;
+}
+
+.settingPreset {
+	display: var(--presets-display) !important;
+}
+
+#timerIcon {
+	display: var(--timer-icon-display) !important;
+}
+
+#challIcon {
+	display: var(--health-icon-display) !important;
+}
+
+#ammoIcon {
+	display: var(--ammo-icon-display) !important;
+}
+
+a {
+	color: var(--link);
+}
+
+a:visited {
+	color: var(--link);
+}
+
+a:active {
+	color: var(--link);
+}
+
+.chatItem {
+	color: var(--chat-bold-text-color) !important;
+	background-color: var(--chat-background-color) !important;
+	border-radius: var(--chat-roundness);
+}
+
+.chatMsg {
+	color: var(--chat-text-color) !important;
+}
+
+#voiceDisplay {
+	display: var(--chat-mic-display) !important;
+}
+
+#chatInput {
+	color: var(--chat-text-color) !important;
+	border-radius: var(--chat-input-roundness);
+}
+
+.chatMsg[style*='color: #fc03ec'] {
+	color: var(--chat-leave-text-color) !important;
+}
+
+.leaderName, .newLeaderName, .newLeaderNameF, .endTableN[style*='color: #eb5656;'] {
+	color: var(--leaderboard-enemy-color) !important;
+}
+
+.leaderName span, .newLeaderName span, .leaderNameM span, .newLeaderNameM span, .leaderNameF span, .newLeaderNameF span {
+	color: var(--leaderboard-clan-color) !important;
+}
+
+.leaderName span[style*='color:#FBC02D'], .newLeaderName span[style*='color:#FBC02D'], .leaderNameM span[style*='color:#FBC02D'], .newLeaderNameM span[style*='color:#FBC02D'], .newLeaderNameF span[style*='color:#FBC02D'] {
+	color: var(--leaderboard-verified-clan-color) !important;
+}
+
+.leaderNameM, .newLeaderNameM, .endTableN[style*='color: #fff;'] {
+	color: var(--leaderboard-me-color) !important;
+}
+
+.leaderNameF, .newLeaderNameF, .endTableN[style*='color: rgba(255,255,255,0.6);'] {
+	color: var(--leaderboard-team-color) !important;
+}
+
+.countIcon, #leaderDisplay, #ammoDisplay, #timerDisplay, #teamScores, #voteToKick, #hudClassIcon, #healthValueHolder {
+	background-color: var(--hud-background-color) !important;
+	border-radius: var(--hud-roundness);
+}
+
+#ammoVal, #curGameInfo, #timerVal, #healthValue, #reloadMsg {
+	color: var(--hud-bold-text-color) !important;
+}
+
+#killsVal, #deathsVal, #streakVal, #myScoreVal, #ammoMax, .weapKey, #pingDisplay, #fpsDisplay, #ingressDisplay, #egressDisplay, #pingText, #ingressPacketCount, #ingressDataSize, #egressPacketCount, #egressDataSize, #curGameInfo div, .tScoreT, #voteKickNum, #voteKickName, #voteKickKeys, #maxHP {
+	color: var(--hud-text-color) !important;
+}
+
+#ingameFPS {
+	color: var(--fps-color) !important;
+}
+
+#voteKickKeys span {
+	color: var(--votekick-keys-color) !important;
+}
+
+.partyAvatar {
+	border-color: var(--ranked-unready-border-color);
+}
+
+.partyAvatar.ready {
+	border-color: var(--ranked-ready-border-color);
+}
+
+#chatInput {
+	background-color: var(--chat-input-background-color) !important;
+}
+
+.chatMsg span[style*='color:#eb5656'] {
+	color: var(--chat-enemy-color) !important;
+}
+.chatMsg span[style*='color: #9eeb56'] {
+	color: var(--chat-team-color) !important;
+}
+
+.chatMsg span[style*='color:#fff'] {
+	color: var(--chat-you-color) !important;
+}
+
+.menuItem {
+	background: var(--menu-background-color) !important;
+}
+
+.headerBar {
+	background-color: var(--topbar-background-color) !important;
+}
+
+#instructions {
+	color: var(--instructions-color) !important;
+}
+
+.progressBar {
+	background-color: var(--home-progress-bar-background) !important;
+}
+
+.menuItem:hover {
+	background: var(--menu-hover-background-color) !important;
+}
+
+.menuItem .menuItemTitle {
+	color: var(--home-menu-text-color) !important;
+}
+
+#menuFPS {
+	color: var(--menu-fps-color) !important;
+}
+
+#mapInfo {
+	color: var(--mapinfo-color) !important;
+	display: var(--mapinfo-display) !important;
+}
+
+.terms {
+	color: var(--terms-color) !important;
+}
+
+.standout {
+	color: var(--advertise-color) !important;
+}
+
+#menuPingIcon {
+	color: var(--menu-ping-color) !important;
+}
+
+#pingIcon {
+	color: var(--ping-color) !important;
+}
+
+.tScoreC {
+    background-color: var(--enemy-score-color) !important;
+}
+
+.tScoreC.you {
+    background-color: var(--team-score-color) !important;
+}
+
+#menuMiniProfilePic {
+	display: var(--show-menu-profile-pic) !important;
+}
+
+#gameNameHolder {
+	display: var(--show-logo) !important;
+}
+
+.classCard {
+	color: var(--class-name-color) !important;
+}
+
+.classWeap {
+	color: var(--class-weapon-color) !important;
+}
+
+.classHP {
+	color: var(--class-hp-value-color) !important;
+}
+
+.classHP span {
+	color: var(--class-hp-unit-color) !important;
+}
+
+.classLvl {
+	color: var(--class-level-color) !important;
+}
+
+.clsXPBarC {
+	background-color: var(--class-progress-bar-color) !important;
+}
+
+.classXPBar {
+	background-color: var(--class-progress-bar-background-color) !important;
+}
+
+.rankedType, .rankedELOTxt {
+	color: var(--ranked-text) !important;
+}
+
+.menuTabsNew {
+    background-color: var(--profile-tabs-background-color);
+}
+
+.tabANew {
+    box-shadow: inset 0 -5px var(--profile-tabs-selected-highlight-color);
+}
+
+.menuTabNew:hover {
+    box-shadow: inset 0 -5px var(--profile-tabs-hover-highlight-color);
+}
+
+span[style*='color: rgba(0, 0, 0, 0.8)'], .menuTabNew {
+	color: var(--menu-text-color) !important;
+}
+
+.settName, .settNameSmall, span[style*='color: rgba(0, 0, 0, 0.5)'], #accResp, #requiresRestart {
+    color: var(--menu-light-text-color) !important;
+}
+
+.hpBSeg, .healthBarSeg {
+	border-radius: var(--health-bar-roundness);
+}
+
+.headerBarRight {
+    border-radius: 0 0 0 var(--top-bar-roundness);
+}
+
+.headerBarLeft {
+	border-radius: 0 0 var(--top-bar-roundness) 0;
+}
+
+#uiBase.onMenu #chatHolder {
+    transition: var(--chat-animate);
+}
+
+#mainLogo {
+    height: var(--logo-size);
+}
+
+.menuClassPlayerName {
+    color: var(--menu-player-name-color);
+}
+
+#leaderContainer i[style*="color:#FBC02D"] {
+	color: var(--premium-color) !important;
+}
+
+#leaderContainer i[style*="color:#40C4FF"] {
+	color: var(--verified-color) !important;
+}
+
+.menuClassPlayerPremium {
+	color: var(--home-premium-color) !important;
+}
+
+.menuClassPlayerVerified {
+	color: var(--home-verified-color) !important;
+}
+
+#menuPingText, #menuFPSDisplay {
+	color: var(--topbar-counters-text-color);
+}
+
+.headerBar div {
+    color: var(--topbar-text-color);
+}
+
+#menuKRCount {
+    color: var(--topbar-light-text-color);
+}
+
+#mLevelCont {
+    color: var(--topbar-text-color);;
+    background-color: var(--topbar-level-background-color);
+}
+
+.settingsBtn {
+	color: var(--input-text);
+	background-color: var(--input);
+}
