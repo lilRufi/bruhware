@@ -1,0 +1,132 @@
+.headerBar {
+    background: rgba(0, 0, 0, 0.18);
+    box-shadow: inset 60px 0 120px #ff00ff1c, inset -60px 0 120px #00ffff1f;
+
+}
+
+#mainLogo {
+    height: 100px;
+
+}
+
+.menuItem {
+    background: rgba(0, 0, 0, 0.18);
+    box-shadow: inset 60px 0 120px #ff00ff1c, inset -60px 0 120px #00ffff1f;
+
+}
+
+#aContainer {
+    position: fixed;
+    transform: scale(0.6);
+    bottom: 0%;
+    right: 22%;
+    z-index:9999999999;
+}
+#aMerger {
+    pointer-events:none;
+    margin-left: 73%;
+    margin-bottom: -5.2%;
+    background-image: url("https://www.philzgoodman.com/s/philzwebsitepromo.png");
+    background-size:25%;
+    background-repeat: no-repeat;
+}
+
+.headerBarRight {
+    opacity: 0.5;
+}
+
+#merchImg {
+    display: none;
+}
+
+#gameUI {
+    opacity: 0.5;
+
+}
+
+#leaderDisplay {
+    background-color: rgba(13, 13, 13, 0.85);
+}
+
+
+
+.twitch {
+    display: none;
+    
+}
+
+.youtube {
+    display: none;
+}
+
+.esports {
+    display: none;
+}
+
+#menuWindow {
+    
+    position: fixed;
+    left: 22%;
+    top: 6%;
+    z-index: 999999;
+    height: fit-content;
+    max-height: 800px;
+    opacity: 0.9;
+
+}
+
+
+
+#settName {
+
+
+    z-index:9999999;
+}
+
+#menuClassName {
+    filter: drop-shadow(4px 4px 10px #6dffd28f);
+}
+
+#menuClassContainer {
+    opacity: 0.9;
+    position: fixed;
+    left: -62%;
+    bottom: -2%;
+    transform: scale(1.1);
+    z-index: 999999;
+}
+
+#customizeButton {
+    z-index: 999999;
+}
+
+#subLogoButtons {
+    bottom: 1.6%;
+    left: 36%;
+    opacity: 0.9;
+}
+
+#customizeButton {
+    width: 5%;
+    background-color: black;
+    padding-top: 12px;
+}
+
+.button {
+    box-shadow: inset 0 -7px 0 0 #ffffff;
+    background-color: #6dffd28f;
+    opacity: 0.8;
+}
+
+
+.buttonR {
+    opacity: 0.8;
+    grayscale(10%); }
+
+.buttonP {
+    opacity: 0.8;
+    grayscale(10%); }
+
+.buttonG {
+    opacity: 0.8;
+    grayscale(10%); }
